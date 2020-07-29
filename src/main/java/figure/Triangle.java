@@ -2,18 +2,18 @@ package figure;
 
 public class Triangle extends Figure {
 
-    private double side1;
-    private double side2;
+    private double sideA;
+    private double sideB;
     private Color color;
 
-    public Triangle(double side1, double side2, Color color) {
-        this.side1 = side1;
-        this.side2 = side2;
+    public Triangle(double sideA, double sideB, Color color) {
+        this.sideA = sideA;
+        this.sideB = sideB;
         this.color = color;
     }
 
     public float getHypotenuse() {
-        return (float) Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
+        return (float) Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
     }
 
     public String draw() {
@@ -22,7 +22,7 @@ public class Triangle extends Figure {
     }
 
     public double getArea() {
-        return 0.5 * side1 * side2;
+        return 0.5 * sideA * sideB;
     }
 
     @Override
