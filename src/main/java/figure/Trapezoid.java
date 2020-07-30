@@ -4,26 +4,27 @@ public class Trapezoid extends Figure {
 
     private double middleLine;
     private double height;
-    private Color color;
 
-    public Trapezoid(double middleLine, double height, Color color) {
+    public Trapezoid(Color color, double middleLine, double height) {
+        super(color);
         this.middleLine = middleLine;
         this.height = height;
-        this.color = color;
     }
 
-    public String draw() {
-        return "Figure - Trapezoid" + ", area - " + getArea() + ", middle line - "
-                + getMiddleLine() + ", height - " + getHeight() + ", color - " + getColor();
+    @Override
+    public void draw() {
+        System.out.println("Drawn trapezoid");
     }
 
+    @Override
     public double getArea() {
         return middleLine * height;
     }
 
     @Override
-    public Color getColor() {
-        return color;
+    public String toString() {
+        return "figure.Figure - figure.Trapezoid" + ", area - " + getArea() + ", middle line - "
+                + getMiddleLine() + ", height - " + getHeight() + ", color - " + getColor();
     }
 
     public double getMiddleLine() {

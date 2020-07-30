@@ -1,56 +1,48 @@
 package service;
 
-import figure.*;
+import figure.Circle;
+import figure.Figure;
+import figure.Triangle;
+import figure.Trapezoid;
+import figure.Square;
+import figure.Color;
+import java.util.Random;
 
 public class FigureService {
 
-    int size = (int)(Math.random()*10);
-    Figure[] figures = new Figure[size];
+    public void print() {
 
-    public void generateRandomFigure(){
-        for(int i = 0; i < size; i++) {
-            int random = (int)(Math.random()*4);
-            switch (random) {
-                case 0:
-                    figures[i] = new Triangle(generateSizeOfSide(), generateSizeOfSide(), generateRandomColor());
-                    break;
-                case 1:
-                    figures[i] = new Trapezoid(generateSizeOfSide(), generateSizeOfSide(), generateRandomColor());
-                    break;
-                case 2:
-                    figures[i] = new Circle( generateSizeOfSide(), generateRandomColor());
-                    break;
-                case 3:
-                    figures[i] = new Square(generateSizeOfSide(), generateRandomColor());
-                    break;
-            }
+        int size = (int) (Math.random() * 10);
+        Figure[] figures = new Figure[size];
+        for (int i = 0; i < size; i++) {
+            figures[i] = generateRandomFigure();
+            System.out.println(figures[i]);
         }
     }
 
-    public double generateSizeOfSide(){
-        return Math.random() * 10;
-    }
+    private static Figure generateRandomFigure() {
 
-    public Color generateRandomColor(){
-        int random = (int)(Math.random() * 5);
+        int random = (int) (Math.random() * 4);
+
         switch (random) {
             case 0:
-                return Color.RED;
+                return new Square(generateRandomColor(), generateSizeOfSide());
             case 1:
-                return Color.BLUE;
+                return new Triangle(generateRandomColor(), generateSizeOfSide(), generateSizeOfSide());
             case 2:
-                return Color.BLACK;
-            case 3:
-                return Color.WHITE;
-            case 6:
-                return Color.YELLOW;
+                return new Circle(generateRandomColor(), generateSizeOfSide());
+            default:
+                return new Trapezoid(generateRandomColor(), generateSizeOfSide(),
+                        generateSizeOfSide());
         }
-        return generateRandomColor();
     }
 
-    public void print(){
-        for(Figure figure: figures) {
-            System.out.println(figure.draw());
-        }
+    private static Color generateRandomColor() {
+        Random random = new Random();
+        return Color.values()[random.nextInt(Color.values().length)];
+    }
+
+    private static double generateSizeOfSide() {
+        return Math.random() * 10;
     }
 }

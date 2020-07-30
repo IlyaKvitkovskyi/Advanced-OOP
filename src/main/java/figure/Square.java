@@ -3,27 +3,29 @@ package figure;
 public class Square extends Figure {
 
     private double side;
-    private Color color;
 
-    public Square(double side, Color color) {
+    public Square(Color color, double side) {
+        super(color);
         this.side = side;
-        this.color = color;
     }
 
-    public double getSide() {
-        return side;
+    @Override
+    public void draw() {
+        System.out.println("Drawn square");
     }
 
-    public String draw() {
-        return "Figure - Square" + ", area - " + getArea() +
-                ", side - " + getSide() + ", color - " + getColor();
-    }
-
+    @Override
     public double getArea() {
         return side * side;
     }
 
-    public Color getColor() {
-        return color;
+    @Override
+    public String toString() {
+        return "figure.Figure - figure.Square" + ", area - " + getArea() +
+                ", side - " + getSide() + ", color - " + getColor();
+    }
+
+    public double getSide() {
+        return side;
     }
 }

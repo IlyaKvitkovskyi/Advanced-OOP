@@ -3,28 +3,29 @@ package figure;
 public class Circle extends Figure {
 
     private double radius;
-    private Color color;
 
-    public Circle(double radius, Color color) {
+    public Circle(Color color, double radius) {
+        super(color);
         this.radius = radius;
-        this.color = color;
     }
 
-    public String draw() {
-        return "Figure - Circle" + ", area - " + getArea() + ", radius - "
-                + getRadius() + ", color - " + getColor();
+    @Override
+    public void draw() {
+        System.out.println("Drawn circle");
     }
 
+    @Override
     public double getArea() {
-        return Math.pow((Math.PI * radius), 2);
+        return Math.PI * Math.pow(radius, 2);
+    }
+
+    @Override
+    public String toString() {
+        return "figure.Figure - figure.Circle" + ", area - " + getArea() + ", radius - "
+                + getRadius() + ", color - " + getColor();
     }
 
     public double getRadius() {
         return radius;
-    }
-
-    @Override
-    public Color getColor() {
-        return color;
     }
 }

@@ -1,23 +1,23 @@
 package figure;
 
 public class Triangle extends Figure {
-
     private double sideA;
     private double sideB;
-    private Color color;
 
-    public Triangle(double sideA, double sideB, Color color) {
+    public Triangle(Color color, double sideA, double sideB) {
+        super(color);
         this.sideA = sideA;
         this.sideB = sideB;
-        this.color = color;
     }
 
-    public float getHypotenuse() {
-        return (float) Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
+    @Override
+    public void draw() {
+        System.out.println("Drawn triangle");
     }
 
-    public String draw() {
-        return "Figure - Triangle" + ", area - " + getArea()
+    @Override
+    public String toString() {
+        return "figure.Figure - figure.Triangle" + ", area - " + getArea()
                 + ", hypotenuse - " + getHypotenuse() + ", color - " + getColor();
     }
 
@@ -25,8 +25,11 @@ public class Triangle extends Figure {
         return 0.5 * sideA * sideB;
     }
 
-    @Override
-    public Color getColor() {
-        return color;
+    public float getHypotenuse() {
+        return (float) Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
     }
 }
+
+
+
+
