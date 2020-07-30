@@ -21,7 +21,7 @@ public class Circle extends Figure {
 
     @Override
     public String toString() {
-        return "figure.Figure - figure.Circle" + ", area - " + getArea() + ", radius - "
+        return "Figure - Circle" + ", area - " + getArea() + ", radius - "
                 + getRadius() + ", color - " + getColor();
     }
 

@@ -23,7 +23,7 @@ public class Trapezoid extends Figure {
 
     @Override
     public String toString() {
-        return "figure.Figure - figure.Trapezoid" + ", area - " + getArea() + ", middle line - "
+        return "Figure - Trapezoid" + ", area - " + getArea() + ", middle line - "
                 + getMiddleLine() + ", height - " + getHeight() + ", color - " + getColor();
     }
 

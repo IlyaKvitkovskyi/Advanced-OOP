@@ -28,7 +28,7 @@ public class FigureService {
             case 0:
                 return new Square(generateRandomColor(), generateSizeOfSide());
             case 1:
-                return new Triangle(generateRandomColor(), generateSizeOfSide(), generateSizeOfSide());
+                return new Triangle(generateRandomColor(), generateSizeOfSide(), generateSizeOfSide(), generateSizeOfSide());
             case 2:
                 return new Circle(generateRandomColor(), generateSizeOfSide());
             default:
