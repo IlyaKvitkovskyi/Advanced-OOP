@@ -13,12 +13,7 @@ public class Triangle extends Figure {
     }
 
     @Override
-    public void draw() {
-        System.out.println("Drawn triangle");
-    }
-
-    @Override
-    public String toString() {
+    public String draw() {
         return "Figure - Triangle" + ", area - " + getArea()
                 + ", sides - " + sideA + ", " + sideB + ", " + sideC + ", color - " + getColor();
     }
@@ -29,7 +24,3 @@ public class Triangle extends Figure {
                 * (halfPerimeter - sideB) * (halfPerimeter - sideC));
     }
 }
-
-
-
-

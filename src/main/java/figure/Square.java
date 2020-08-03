@@ -10,19 +10,14 @@ public class Square extends Figure {
     }
 
     @Override
-    public void draw() {
-        System.out.println("Drawn square");
+    public String draw() {
+        return "Figure - Square" + ", area - " + getArea() +
+                ", side - " + getSide() + ", color - " + getColor();
     }
 
     @Override
     public double getArea() {
         return side * side;
-    }
-
-    @Override
-    public String toString() {
-        return "Figure - Square" + ", area - " + getArea() +
-                ", side - " + getSide() + ", color - " + getColor();
     }
 
     public double getSide() {

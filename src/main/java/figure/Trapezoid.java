@@ -12,19 +12,14 @@ public class Trapezoid extends Figure {
     }
 
     @Override
-    public void draw() {
-        System.out.println("Drawn trapezoid");
+    public String draw() {
+        return "Figure - Trapezoid" + ", area - " + getArea() + ", middle line - "
+                + getMiddleLine() + ", height - " + getHeight() + ", color - " + getColor();
     }
 
     @Override
     public double getArea() {
         return middleLine * height;
-    }
-
-    @Override
-    public String toString() {
-        return "Figure - Trapezoid" + ", area - " + getArea() + ", middle line - "
-                + getMiddleLine() + ", height - " + getHeight() + ", color - " + getColor();
     }
 
     public double getMiddleLine() {

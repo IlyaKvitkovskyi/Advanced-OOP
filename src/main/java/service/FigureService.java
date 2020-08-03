@@ -10,6 +10,8 @@ import java.util.Random;
 
 public class FigureService {
 
+    private static final int COUNT_OF_SHAPE_TYPE = (int) (Math.random() * 4);
+
     public void print() {
 
         int size = (int) (Math.random() * 10);
@@ -22,9 +24,7 @@ public class FigureService {
 
     private static Figure generateRandomFigure() {
 
-        int random = (int) (Math.random() * 4);
-
-        switch (random) {
+        switch (COUNT_OF_SHAPE_TYPE) {
             case 0:
                 return new Square(generateRandomColor(), generateSizeOfSide());
             case 1:
